@@ -1,4 +1,4 @@
-# OOP_SchoolLibrary
+# OOP School Library
 
 > Description the project.
 
