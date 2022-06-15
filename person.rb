@@ -1,4 +1,4 @@
-require "./nameable.rb"
+require './nameable'
 
 class Person
   attr_reader :id
