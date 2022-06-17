@@ -19,7 +19,7 @@ class Main
     option
   end
 
-  def option 
+  def option # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
     option = gets.chomp.to_i
     case option
     when 1
