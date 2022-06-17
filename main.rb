@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require './app'
 
 class Main
@@ -28,13 +29,13 @@ class Main
       @app.list_all_people
       interface
     when 3
-      @app.create_a_person
+      @app.create_person
       interface
     when 4
-      @app.create_a_book
+      @app.create_book
       interface
     when 5
-      @app.create_a_rental
+      @app.create_rental
       interface
     when 6
       @app.list_all_rentals_by_person_id

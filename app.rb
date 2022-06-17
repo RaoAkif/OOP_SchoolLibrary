@@ -13,7 +13,7 @@ class App
     @rentals = []
   end
 
-  def create_a_book
+  def create_book
     puts 'Enter the name of the book:'
     name = gets.chomp
     puts 'Enter the author of the book:'
@@ -33,7 +33,7 @@ class App
     puts "\n\n"
   end
 
-  def create_a_person # rubocop:disable Metrics/MethodLength
+  def create_person # rubocop:disable Metrics/MethodLength
     puts 'Do you want to create a Student (1) or a Teacher (2)?'
     option = gets.chomp.to_i
     case option
@@ -73,7 +73,7 @@ class App
     puts "\n\n"
   end
 
-  def create_a_rental
+  def create_rental
     puts 'select a book from the following list by number (not ID):'
     list_books.each_with_index do |book, index|
       puts "[#{index}] Title: #{book.title}, Author: #{book.author}"
