@@ -13,6 +13,37 @@ class App
     @rentals = []
   end
 
+  def interface
+    puts "Welcome to School Library App!\n\n"
+    puts 'Please choose an option by entering a number:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals for a given person id'
+    puts '7 - Exit'
+    option
+  end
+
+  def option # rubocop:disable Metrics/CyclomaticComplexity
+    option = gets.chomp.to_i
+    case option
+    when 1 then list_all_books
+    when 2 then list_all_people
+    when 3 then create_person
+    when 4 then create_book
+    when 5 then create_rental
+    when 6 then list_all_rentals_by_person_id
+    when 7
+      puts 'Goodbye!'
+      exit
+    else
+      puts 'Invalid option!'
+      interface
+    end
+  end
+
   def create_book
     puts 'Enter the name of the book:'
     name = gets.chomp
@@ -22,6 +53,7 @@ class App
     puts "\n\n"
     book = Book.new(name, author)
     @list_books.push(book)
+    interface
   end
 
   def list_all_books
@@ -31,6 +63,7 @@ class App
       puts "Title: #{book.title}, Author: #{book.author}"
     end
     puts "\n\n"
+    interface
   end
 
   def create_person # rubocop:disable Metrics/MethodLength
@@ -49,6 +82,7 @@ class App
 
       student = Student.new(age, name, parent_permission: parent_permission)
       @list_people.push(student)
+      interface
     when 2
       puts 'Enter the name of the teacher:'
       name = gets.chomp
@@ -61,6 +95,7 @@ class App
 
       teacher = Teacher.new(age, name, specialization, parent_permission: true)
       @list_people.push(teacher)
+      interface
     end
   end
 
@@ -71,6 +106,7 @@ class App
       puts "[#{person.class}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
     end
     puts "\n\n"
+    interface
   end
 
   def create_rental
@@ -91,6 +127,7 @@ class App
     @rentals.push(rental)
 
     puts 'Rental created!'
+    interface
   end
 
   def list_all_rentals_by_person_id
@@ -102,5 +139,6 @@ class App
       puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" if rental.person.id == id
     end
     puts "\n\n"
+    interface
   end
 end
