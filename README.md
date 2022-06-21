@@ -1,12 +1,12 @@
 # OOP School Library
 
-> Description the project.
+> This is a command line interface to record what books are in the library of a university and who borrows them. This project uses Object Oriented Programming and is built using Ruby.
+
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- No Frameworks
 
 ## Live Demo (if available)
 
