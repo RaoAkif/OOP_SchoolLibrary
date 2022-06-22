@@ -1,10 +1,5 @@
 require './app'
 
 class Main
-  def initialize
-    @app = App.new
-    @app.interface
-  end
+  App.new.run
 end
-
-Main.new
