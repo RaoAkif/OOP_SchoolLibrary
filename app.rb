@@ -1,18 +1,32 @@
+require './store'
 require './helpers'
 require './create_user'
 require './list'
 require './add'
+require './book'
+require './person'
+require './teacher'
+require './student'
+require './rental'
+require './writer'
+require './reader'
 
 class App
+  attr_reader :store
+
   include Helpers
   include CreateUser
   include List
   include Add
 
   def initialize
-    @booklist = []
-    @list_people = []
-    @rentals = []
+    @store = Store.new
+    begin
+      Reader.new(@store).read
+    rescue Errno::ENOENT
+      puts 'No data file found.'
+    end
+    @writer = Writer.new
   end
 
   def run
@@ -28,8 +42,7 @@ class App
       print "\e[2J\e[f"
       selection(input)
     elsif input == '0'
-      print "\e[2J\e[f"
-      nil
+      @writer.close_all and abort('Thanks for using this App. Goodbye!')
     else
       invalid_prompt
       select_option

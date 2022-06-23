@@ -41,7 +41,8 @@ module CreateUser
 
     student = Student.new(age, name, classroom, parent_permission: parent_permission)
 
-    @list_people.push(student)
+    @store.people << student
+    @writer.people(age: age, name: name, parent_permission: parent_permission)
 
     response('Student')
   end
@@ -57,7 +58,8 @@ module CreateUser
     specialization = gets.chomp
 
     teacher = Teacher.new(age, name, specialization, parent_permission: true)
-    @list_people.push(teacher)
+    @store.people << teacher
+    @writer.people(age: age, name: name, specialization: specialization)
     response('Teacher')
   end
 end
