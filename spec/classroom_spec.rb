@@ -1,5 +1,4 @@
-require './student'
-require './classroom'
+require 'spec_helper.rb'
 
 describe Classroom do
   it 'should have a label' do

@@ -1,5 +1,4 @@
-require './store'
-require './book'
+require 'spec_helper.rb'
 
 describe Book do
   it 'should have a title' do

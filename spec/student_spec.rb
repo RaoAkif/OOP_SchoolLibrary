@@ -1,4 +1,4 @@
-require './student'
+require 'spec_helper.rb'
 
 describe Student do
   it 'should have a name' do

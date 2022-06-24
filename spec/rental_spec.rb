@@ -1,6 +1,4 @@
-require './rental'
-require './book'
-require './person'
+require 'spec_helper.rb'
 
 describe Rental do
   it 'should have a date' do

@@ -1,8 +1,4 @@
-require './student'
-require './person'
-require './book'
-require './rental'
-require './store'
+require 'spec_helper.rb'
 
 describe Person do
   it 'should have a name' do
